@@ -1,13 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
+// Banner Components
 import solidLogo from '../../assets/svgs/synapseLogo/synapse_solid.svg';
 import solidLogoText from '../../assets/svgs/synapseLogo/synapse_text_solid.svg';
 
+// Ilkomunity Components
+import agriUX from '../../assets/svgs/ilkomunity/homepage/logo_agriux.svg';
+import agriBot from '../../assets/svgs/ilkomunity/homepage/logo_agribot.svg';
+import cp from '../../assets/svgs/ilkomunity/homepage/logo_cp.svg';
+import csi from '../../assets/svgs/ilkomunity/homepage/logo_csi.svg';
+import daming from '../../assets/svgs/ilkomunity/homepage/logo_daming.svg';
+import gary from '../../assets/svgs/ilkomunity/homepage/logo_gary.svg';
+import iwdc from '../../assets/svgs/ilkomunity/homepage/logo_iwdc.svg';
+import mad from '../../assets/svgs/ilkomunity/homepage/logo_mad.svg';
+
+// Megaproker Components
+import ittoday from '../../assets/svgs/megaproker/ittoday.svg';
+import cpsc from '../../assets/svgs/megaproker/cpsc.svg';
+
 function Home() {
   return (
-    <section className="flex flex-col justify-center items-center mt-10 m-0 p-0">
+    <section className="flex flex-col justify-center items-center mt-1 m-0 p-0">
       {/* Banner Section */}
-      <section className="flex justify-center items-center w-[105%] bg-hero-banner-phone bg-center bg-stretch bg-no-repeat md:bg-hero-banner-tablet lg:bg-hero-banner-desktop">
+      <section className="flex justify-center items-center w-[105%] bg-bannerPhone bg-center bg-stretch bg-no-repeat md:bg-bannerTab lg:bg-bannerDesk">
         <motion.div
           whileInView={{ y: [50, 25, 0], opacity: [0, 0, 1] }}
           transition={{ duration: 0.35 }}
@@ -38,6 +54,261 @@ function Home() {
             Himpunan Mahasiswa Ilmu Komputer
           </p>
         </motion.div>
+      </section>
+
+      {/* Ilkomunity */}
+      <section>
+        <div className="bg-ilkomunityContainer bg-cover bg-no-repeat bg-bottom h-fit items-center flex flex-col pt-5 w-screen ">
+          <motion.div
+            whileInView={{ y: [50, 25, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 0.35 }}
+            className='h-fit items-center flex flex-col pt-5 w-screen'
+          >
+            <h1 className="font-sports text-2xl md:text-3xl text-white text-stroke-2 text-stroke-color-black text-shadow-black">ILKOMUNITY</h1>
+            <section className="grid grid-cols-2 lg:grid-cols-4 md:gap-6 gap-3 p-3 place-items-center w-full max-w-full md:max-w-full md:px-10 lg:px-4 xl:px-[80px]">
+            <motion.div
+                whileHover={{
+                  scale: 1.05, // Slight scaling effect
+                  boxShadow: "10px 10px 0px 0px rgba(0, 0, 0, 1)", // Solid black shadow offset
+                  transition: { duration: 0.3 },
+                }}
+                className="bg-ilkomunityGrid bg-center bg-stretch bg-no-repeat flex flex-col items-center justify-center p-6 w-full 
+                          md:h-[250px]"
+              >
+                <img
+                  src={agriUX}
+                  alt="Saung Desain"
+                  className="w-[60px] h-[60px] 
+                            mob-m:w-[70px] mob-m:h-[70px] 
+                            mob-l:w-[100px] mob-l:h-[100px]
+                            md:w-full md:h-[150px] 
+                            lg:h-[120px]"
+                />
+                <h4 className="text-xs mt-2 font-sports font-[1000] text-stroke-1 text-stroke-color-black text-shadow-black pt-2 text-[#F0E4D4] 
+                              md:text-2xl mob-m:text-[1rem] mob-l:text-[1.2rem]">AGRIUX</h4>
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.05, // Slight scaling effect
+                  boxShadow: "10px 10px 0px 0px rgba(0, 0, 0, 1)", // Solid black shadow offset
+                  transition: { duration: 0.3 },
+                }}
+                className="bg-ilkomunityGrid bg-center bg-stretch bg-no-repeat flex flex-col items-center justify-center p-6 w-full 
+                          md:h-[250px]"
+              >
+                <img
+                  src={csi}
+                  alt="Saung Desain"
+                  className="w-[60px] h-[60px] 
+                            mob-m:w-[70px] mob-m:h-[70px] 
+                            mob-l:w-[100px] mob-l:h-[100px]
+                            md:w-full md:h-[150px] 
+                            lg:h-[120px]"
+                />
+                <h4 className="text-xs mt-2 font-sports font-[1000] text-stroke-1 text-stroke-color-black text-shadow-black pt-2 text-[#F0E4D4] 
+                              md:text-2xl mob-m:text-[1rem] mob-l:text-[1.2rem]">CSI</h4>
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.05, // Slight scaling effect
+                  boxShadow: "10px 10px 0px 0px rgba(0, 0, 0, 1)", // Solid black shadow offset
+                  transition: { duration: 0.3 },
+                }}
+                className="bg-ilkomunityGrid bg-center bg-stretch bg-no-repeat flex flex-col items-center justify-center p-6 w-full 
+                          md:h-[250px]"
+              >
+                <img
+                  src={agriBot}
+                  alt="Saung Desain"
+                  className="w-[60px] h-[60px] 
+                            mob-m:w-[70px] mob-m:h-[70px] 
+                            mob-l:w-[100px] mob-l:h-[100px]
+                            md:w-full md:h-[150px] 
+                            lg:h-[120px]"
+                />
+                <h4 className="text-xs mt-2 font-sports font-[1000] text-stroke-1 text-stroke-color-black text-shadow-black pt-2 text-[#F0E4D4] 
+                              md:text-2xl mob-m:text-[1rem] mob-l:text-[1.2rem]">AGRIBOT</h4>
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.05, // Slight scaling effect
+                  boxShadow: "10px 10px 0px 0px rgba(0, 0, 0, 1)", // Solid black shadow offset
+                  transition: { duration: 0.3 },
+                }}
+                className="bg-ilkomunityGrid bg-center bg-stretch bg-no-repeat flex flex-col items-center justify-center p-6 w-full 
+                          md:h-[250px]"
+              >
+                <img
+                  src={cp}
+                  alt="Saung Desain"
+                  className="w-[60px] h-[60px] 
+                            mob-m:w-[70px] mob-m:h-[70px] 
+                            mob-l:w-[100px] mob-l:h-[100px]
+                            md:w-full md:h-[150px] 
+                            lg:h-[120px]"
+                />
+                <h4 className="text-xs mt-2 font-sports font-[1000] text-stroke-1 text-stroke-color-black text-shadow-black pt-2 text-[#F0E4D4] 
+                              md:text-2xl mob-m:text-[1rem] mob-l:text-[1.2rem]">CP</h4>
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.05, // Slight scaling effect
+                  boxShadow: "10px 10px 0px 0px rgba(0, 0, 0, 1)", // Solid black shadow offset
+                  transition: { duration: 0.3 },
+                }}
+                className="bg-ilkomunityGrid bg-center bg-stretch bg-no-repeat flex flex-col items-center justify-center p-6 w-full 
+                          md:h-[250px]"
+              >
+                <img
+                  src={daming}
+                  alt="Saung Desain"
+                  className="w-[60px] h-[60px] 
+                            mob-m:w-[70px] mob-m:h-[70px] 
+                            mob-l:w-[100px] mob-l:h-[100px]
+                            md:w-full md:h-[150px] 
+                            lg:h-[120px]"
+                />
+                <h4 className="text-xs mt-2 font-sports font-[1000] text-stroke-1 text-stroke-color-black text-shadow-black pt-2 text-[#F0E4D4] 
+                              md:text-2xl mob-m:text-[1rem] mob-l:text-[1.2rem]">DAMING</h4>
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.05, // Slight scaling effect
+                  boxShadow: "10px 10px 0px 0px rgba(0, 0, 0, 1)", // Solid black shadow offset
+                  transition: { duration: 0.3 },
+                }}
+                className="bg-ilkomunityGrid bg-center bg-stretch bg-no-repeat flex flex-col items-center justify-center p-6 w-full 
+                          md:h-[250px]"
+              >
+                <img
+                  src={iwdc}
+                  alt="Saung Desain"
+                  className="w-[60px] h-[60px] 
+                            mob-m:w-[70px] mob-m:h-[70px] 
+                            mob-l:w-[100px] mob-l:h-[100px]
+                            md:w-full md:h-[150px] 
+                            lg:h-[120px]"
+                />
+                <h4 className="text-xs mt-2 font-sports font-[1000] text-stroke-1 text-stroke-color-black text-shadow-black pt-2 text-[#F0E4D4] 
+                              md:text-2xl mob-m:text-[1rem] mob-l:text-[1.2rem]">IWDC</h4>
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.05, // Slight scaling effect
+                  boxShadow: "10px 10px 0px 0px rgba(0, 0, 0, 1)", // Solid black shadow offset
+                  transition: { duration: 0.3 },
+                }}
+                className="bg-ilkomunityGrid bg-center bg-stretch bg-no-repeat flex flex-col items-center justify-center p-6 w-full 
+                          md:h-[250px]"
+              >
+                <img
+                  src={gary}
+                  alt="Saung Desain"
+                  className="w-[60px] h-[60px] 
+                            mob-m:w-[70px] mob-m:h-[70px] 
+                            mob-l:w-[100px] mob-l:h-[100px]
+                            md:w-full md:h-[150px] 
+                            lg:h-[120px]"
+                />
+                <h4 className="text-xs mt-2 font-sports font-[1000] text-stroke-1 text-stroke-color-black text-shadow-black pt-2 text-[#F0E4D4] 
+                              md:text-2xl mob-m:text-[1rem] mob-l:text-[1.2rem]">GARY</h4>
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.05, // Slight scaling effect
+                  boxShadow: "10px 10px 0px 0px rgba(0, 0, 0, 1)", // Solid black shadow offset
+                  transition: { duration: 0.3 },
+                }}
+                className="bg-ilkomunityGrid bg-center bg-stretch bg-no-repeat flex flex-col items-center justify-center p-6 w-full 
+                          md:h-[250px]"
+              >
+                <img
+                  src={mad}
+                  alt="Saung Desain"
+                  className="w-[60px] h-[60px] 
+                            mob-m:w-[70px] mob-m:h-[70px] 
+                            mob-l:w-[100px] mob-l:h-[100px]
+                            md:w-full md:h-[150px] 
+                            lg:h-[120px]"
+                />
+                <h4 className="text-xs mt-2 font-sports font-[1000] text-stroke-1 text-stroke-color-black text-shadow-black pt-2 text-[#F0E4D4] 
+                              md:text-2xl mob-m:text-[1rem] mob-l:text-[1.2rem]">MAD</h4>
+              </motion.div>
+            </section>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Megaproker */}
+      <section>
+      <div className="bg-megaprokerContainer bg-cover bg-no-repeat bg-bottom h-full">
+        <motion.div
+          whileInView={{ y: [50, 25, 0], opacity: [0, 0, 1] }}
+          transition={{ duration: 0.35 }}
+          className='items-center flex flex-col pt-5 w-screen'
+        >
+            <h1 className="font-sports text-2xl md:text-3xl text-white text-stroke-2 text-stroke-color-black text-shadow-black lg:mb-4">MEGAPROKER</h1>
+            <div className='mx-3 md:mx-10 lg:m-0 lg:mx-4 xl:mx-[5rem]'>
+
+              {/* ITOD */}
+              <section className='bg-card-top-mobile bg-no-repeat bg-center bg-stretch w-fit flex flex-col items-center px-4 py-6 gap-y-5 min-h-[750px]
+                                  md:bg-card-top-tablet md:flex-row md:items-start md:pt-10 md:min-h-[630px]
+                                  lg:bg-card-top-desktop lg:m-0 lg:min-h-[400px] lg:px-[40px] lg:pt-[70px] lg:gap-x-5
+                                  xl:min-h-[600px] xl:pt-[140px] xl:px-[110px]'>          
+                <img
+                    src={ittoday}
+                    className="w-full items-center justify-center mt-5 max-w-[350px] 
+                              lg:m-0 xl:max-w-[500px]"
+                    alt="IT Today"
+                />            
+                <div className="flex flex-col items-center mb-[15rem] gap-y-2 lg:m-0">
+                  <h2 className="font-sports w-full text-white text-left text-3xl text-stroke-2 text-stroke-color-black text-shadow-black
+                                xl:text-[45px]">IT TODAY</h2>
+                  <p className="font-monts text-justify text-sm xl:text-xl">
+                    <span className="font-bold">IT Today{" "}</span>
+                      merupakan serangkaian acara nasional yang bertemakan teknologi
+                      informasi dalam dunia Agriculture. Kegiatan ini terdiri atas
+                      HackToday (Capture the Flag), UXToday (UI/UX Design), Poster
+                      Competition, Workshop. Festival, dan National Seminar mengenai
+                      teknologi informasi terkini.
+                  </p>
+                </div>
+              </section>
+
+              {/* CPSC */}
+              <section className='bg-card-bottom-mobile bg-no-repeat bg-center bg-stretch w-full flex flex-col items-center px-4 py-6 gap-y-5 min-h-[750px] mt-[-12rem]
+                    md:bg-card-bottom-tablet md:flex-row-reverse md:min-h-[630px] md:mt-[-16rem] md:pt-[100px] md:gap-x-10 
+                    lg:bg-card-bottom-desktop lg:m-0 lg:min-h-[400px] lg:px-[40px] lg:mt-[-3rem] lg:gap-x-5
+                    xl:min-h-[600px] xl:pt-[140px] xl:px-[110px] xl:mt-[-5rem]'>
+                <img
+                  src={cpsc}
+                  className="w-1/2 flex items-end justify-end mt-[11rem] max-w-[200px] md:mt-0 xl:max-w-[350px]"
+                  alt="CPSC"
+                />
+                <div className="flex flex-col items-center gap-y-2 md:items-center md:justify-between">
+                  <h2 className="font-sports w-full text-white text-left text-3xl text-stroke-2 text-stroke-color-black text-shadow-black
+                                xl:text-[45px]">CPSC</h2>
+                  <p className="font-monts text-justify text-sm xl:text-xl">
+                    <span className="font-bold">
+                      Computer Problem Solving Competition (CPSC){" "}
+                    </span>
+                    merupakan ajang kompetisi tahunan yang diadakan oleh Himpunan Mahasiswa Ilmu Komputer (Himalkom) IPB. 
+                    Acara ini menjadi bagian dari rangkaian kegiatan Pesta Sains Nasional (PSN) yang diselenggarakan oleh 
+                    Fakultas Matematika dan Ilmu Pengetahuan Alam (FMIPA) IPB, bertujuan untuk mengasah kemampuan peserta 
+                    dalam memecahkan masalah di bidang ilmu komputer.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </motion.div>
+        </div>
       </section>
     </section>    
   );
