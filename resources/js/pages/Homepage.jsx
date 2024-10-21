@@ -21,9 +21,9 @@ import cpsc from '../../assets/svgs/megaproker/cpsc.svg';
 
 function Home() {
   return (
-    <section className="flex flex-col justify-center items-center mt-1 m-0 p-0">
+    <section className="flex flex-col justify-center items-center mt-1 m-0 p-0 overflow-hidden">
       {/* Banner Section */}
-      <section className="flex justify-center items-center w-[105%] bg-bannerPhone bg-center bg-stretch bg-no-repeat md:bg-bannerTab lg:bg-bannerDesk">
+      <section className="flex justify-center items-center w-screen bg-bannerPhone bg-center bg-stretch bg-no-repeat md:bg-bannerTab lg:bg-bannerDesk">
         <motion.div
           whileInView={{ y: [50, 25, 0], opacity: [0, 0, 1] }}
           transition={{ duration: 0.35 }}
