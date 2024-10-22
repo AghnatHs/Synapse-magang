@@ -2,7 +2,7 @@ import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Homepage';
-import About from './pages/About';
+import About from './pages/ProfileHimpunan';
 import Header from './components/Header';
 import Footer from './components/Footer';
 

@@ -76,7 +76,7 @@ function Header() {
             <Link to="/" className="text-2xl" onClick={toggleMenu}>Home</Link>
             <button onClick={toggleProfileMenu} className="text-2xl focus:outline-none lg:hidden">Profile</button>
             <div className={`flex flex-col items-center space-y-2 transition-max-height duration-300 ease-in-out overflow-hidden ${isProfileOpen ? 'max-h-[25rem]' : 'max-h-0'}`}>
-                <Link to="/profile/details" className="text-xl" onClick={toggleMenu}>Profile Himalkom</Link>
+                <Link to="/about" className="text-xl" onClick={toggleMenu}>Profile Himalkom</Link>
                 <button onClick={toggleProfileDivisiMenu} className="text-xl focus:outline-none lg:hidden">Profile Divisi</button>
                 <div className={`flex flex-col items-center space-y-2 transition-max-height duration-300 ease-in-out overflow-hidden ${isProfileDivisiOpen ? 'max-h-[25rem]' : 'max-h-0'}`}>
                     <Link to="profile/divisi/bp" className="text-lg" onClick={toggleMenu}>BP</Link>
@@ -113,7 +113,7 @@ function Header() {
                 <div className="relative group">
                     <button className="block lg:inline-block mt-4 lg:mt-0 focus:outline-none group-hover:text-gray-700">Profile</button>
                     <div className="absolute left-0 min-w-[200px] bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible">
-                        <Link to="/profile/details" className="block px-4 py-2 hover:bg-gray-200">Profile Himalkom</Link>
+                        <Link to="/about" className="block px-4 py-2 hover:bg-gray-200">Profile Himalkom</Link>
                         <div className="relative">
                         <button onClick={toggleProfileDivisiMenu} className="block w-full text-left px-4 py-2 focus:outline-none hover:bg-gray-200">Profile Divisi</button>
                         <div className={`flex flex-col bg-white border rounded shadow-lg transition-max-height duration-1000 ease-in-out overflow-hidden ${isProfileDivisiOpen ? 'max-h-[25rem]' : 'max-h-0'}`}>
