@@ -15,10 +15,12 @@ module.exports = {
             },
             textShadow: {
                 black: "2px 3px #040404",
+                blackWide: "4px 6px #040404",
             },
             textStrokeWidth: {
                 2: "2px",
                 1: "1px",
+                5: "5px",
             },
             textStrokeColor: {
                 black: "#000000",
@@ -124,6 +126,9 @@ module.exports = {
                     "url('/resources/assets/pngs/card-proker/card1-tablet.png')",
                 "card-bottom-tablet":
                     "url('/resources/assets/pngs/card-proker/card2-tablet.png')",
+
+                "about-himalkom-desktop": "url('/resources/assets/pngs/containers/about-himalkom-desktop.png')",
+                "goals-himalkom-desktop": "url('/resources/assets/pngs/containers/tujuan-himalkom-desktop.png')",
             },
             backgroundSize: {
                 stretch: "100% 100%",
