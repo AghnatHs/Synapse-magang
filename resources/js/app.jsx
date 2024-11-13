@@ -5,8 +5,12 @@ import Home from './pages/Homepage';
 import About from './pages/ProfileHimpunan';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Komnews from './pages/Komnews';
+import KomnewsSingle from './pages/KomnewsSingle';
 
 function AppContent() {
+
+
   return (
     <div>
       <Header />
@@ -14,6 +18,8 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/komnews" element={<Komnews />} />
+          <Route path="/komnews/:slug" element={<KomnewsSingle />} /> {/* Pastikan ini ada */}
         </Routes>
       </main>
       <Footer />
