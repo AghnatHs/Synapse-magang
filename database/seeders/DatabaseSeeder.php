@@ -16,30 +16,22 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Category::create([
-            'name'=> 'Campus Life',
-            'slug'=> 'campus_life'
+            'name' => 'Campus Life',
         ]);
         Category::create([
-            'name'=> 'Awards',
-            'slug'=> 'awards'
+            'name' => 'Awards',
         ]);
         Category::create([
-            'name'=> 'Education',
-            'slug'=> 'education'
+            'name' => 'Education',
         ]);
         Category::create([
-            'name'=> 'Technology',
-            'slug'=> 'technology'
+            'name' => 'Technology',
         ]);
         Category::create([
-            'name'=> 'Collaboration',
-            'slug'=> 'collaboration'
+            'name' => 'Collaboration',
         ]);
         Category::create([
-            'name'=> 'Innovation',
-            'slug'=> 'innovation'
+            'name' => 'Innovation'
         ]);
-
-        Komnews::factory()->count(20)->create();
     }
 }
