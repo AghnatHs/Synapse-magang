@@ -67,7 +67,7 @@ const Komnews = () => {
                     TODAY HEADLINE!
                 </h1>
                 <img
-                    src={data.headline.image}
+                    src={data.headline.imageUrl}
                     alt={data.headline.title}
                     className="w-[180px] mb-2 border border-black border-2 shadow-lg sm:w-[250px] md:w-[300px] lg:w-[350px]"
                 />
@@ -75,7 +75,7 @@ const Komnews = () => {
                     {data.headline.title}
                 </h2>
                 <p className="mb-4 font-monts text-[13px] text-justify sm:text-[16px] md:text-[20px] lg:text-[24px] ">
-                    {data.headline.content}
+                    {data.headline.excerp}
                 </p>
                 <Link
                     className="w-[10rem] bg-[#F1880A] text-[12px] text-white font-semibold px-3 py-1.5 border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-white hover:text-[#F1880A] sm:text-[16px] md:text-[18px] lg:text-[22px] "
@@ -122,7 +122,7 @@ const Komnews = () => {
                             {item.title}
                         </h2>
                         <p className="mb-2 text-[12px] text-justify sm:text-[15px] md:text-[18px] lg:text-[20px] lg:mb-4">
-                            {item.content}
+                            {item.excerp}
                         </p>
                         <p className="mb-2 text-[12px] font-semibold sm:text-[15px] md:text-[18px] lg:text-[20px] lg:mb-4">
                             {new Date(item.created_at).toLocaleDateString(

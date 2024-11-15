@@ -13,7 +13,7 @@ class KomnewsController extends Controller
         return response()->json([
             'title' => 'KOMNEWS',
             'categories' => Category::all(),
-            'komnews' => Komnews::with('categories')->get(),
+            'komnews' => Komnews::with('categories')->latest()->get(),
             'headline' => Komnews::with('categories')->latest()->get()->first()
         ]);
     }
