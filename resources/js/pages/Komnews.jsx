@@ -113,7 +113,7 @@ const Komnews = () => {
             </div>
 
             <div className="flex flex-col lg:my-10">
-                {filteredKomnews.slice(1).map((item, index) => (
+                {filteredKomnews.slice(selectedCategory === "All" ? 1 : 0).map((item, index) => (
                     <div
                         key={index}
                         className="mb-3 bg-[#ffedc8] m-2 p-4 rounded-md md:p-5.5 lg:p-7"
@@ -146,9 +146,9 @@ const Komnews = () => {
                         <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-2 mb-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
                             {item.categories.map((category, catIndex) => (
                                 <Link
+                                    onClick={() => handleCategoryClick(category.slug)}
                                     key={catIndex}
                                     className="mt-1 border border-black text-[10px] border-2 bg-white font-semibold px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#F1880A] hover:text-white sm:text-[12px] md:text-[15px] lg:text-[18px]"
-                                    to={`/komnews/category/${category.slug}`}
                                 >
                                     {category.name}
                                 </Link>

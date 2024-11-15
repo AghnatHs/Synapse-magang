@@ -60,13 +60,12 @@ function KomnewsSingle() {
             <p className="text-lg leading-relaxed mb-8 px-4">{article.content}</p>
 
             {/* Kategori */}
-            <div className="flex flex-wrap mb-14">
+            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-2 mb-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
               {article.categories ? (
                 article.categories.map((category, index) => (
                   <Link
                     key={index}
-                    to={`/komnews/category/${category.slug}`}
-                    className="bg-[#F1880A] text-black  px-4 py-2 mr-2 mt-2 border-4 border-black hover:bg-[#ab732a]"
+                    className="mt-1 mb-5 border border-black text-[10px] border-2 bg-white font-semibold px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#F1880A] hover:text-white sm:text-[12px] md:text-[15px] lg:text-[18px]"
                   >
                     {category.name}
                   </Link>
