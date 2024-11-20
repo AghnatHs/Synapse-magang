@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use Carbon\Carbon;
 use App\Models\Komnews;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
 
 class KomnewsController extends Controller
 {
     public function index()
     {
+        $today = Carbon::today(config('app.timezone'));
         return response()->json([
             'title' => 'KOMNEWS',
             'categories' => Category::all(),
             'komnews' => Komnews::with('categories')->latest()->get(),
-            'headline' => Komnews::with('categories')->latest()->get()->first()
+            'headlines' => Komnews::with('categories')->whereDate('created_at', $today)->latest()->get()
         ]);
     }
 

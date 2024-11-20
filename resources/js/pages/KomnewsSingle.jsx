@@ -29,9 +29,18 @@ function KomnewsSingle() {
         return <p className="text-center text-lg">Loading...</p>;
     }
 
+    if (error) {
+        return <p className="m-[10%] text-center text-red-500">{error}</p>;
+    }
+
+    if (!article) {
+        return <p className="text-center text-lg">Article not found.</p>;
+    }
+
     return (
         <div>
             <div className="container mx-auto mt-8 px-4">
+                {/* Back to Komnews Link */}
                 <Link
                     to="/komnews"
                     className="text-blue-500 hover:underline mb-4 inline-block"
@@ -39,30 +48,40 @@ function KomnewsSingle() {
                     &larr; Back to Komnews
                 </Link>
 
-                {error && <p className="text-center text-red-500">{error}</p>}
-
+                {/* Article Content */}
                 {article ? (
                     <>
-                        <h1 className="text-2xl font-bold mb-4 text-left">
+                        {/* Article Title */}
+                        <h1 className="text-5xl font-bold mb-4 text-left">
                             {article.title}
                         </h1>
-                        {/* Gambar Artikel */}
-                        {article.imageUrl && (
-                            <img
-                                src={article.imageUrl}
-                                alt={article.title}
-                                className="w-full object-cover mb-4 rounded-lg max-h-80"
-                            />
-                        )}
-                        {/* Tanggal Pembuatan */}
+
+                        {/* Creation Date */}
                         <p className="text-gray-700 text-left mb-4">
                             {article.created_at
                                 ? new Date(
                                       article.created_at
-                                  ).toLocaleDateString()
+                                  ).toLocaleDateString("id-ID", {
+                                      weekday: "long",
+                                      year: "numeric",
+                                      month: "long",
+                                      day: "numeric",
+                                  })
                                 : "Date not available"}
                         </p>
-                        {/* Isi Artikel */}
+
+                        {/* Article Image */}
+                        {article.imageUrl && (
+                            <div className="flex flex-col items-center justify-center mb-4">
+                                <img
+                                    src={article.imageUrl}
+                                    alt={article.title}
+                                    className="w-[280px] mb-2 shadow-lg sm:w-[250px] md:w-[300px] lg:w-[600px]"
+                                />
+                            </div>
+                        )}
+
+                        {/* Article Content */}
                         <div
                             className="text-lg leading-relaxed mb-8 px-4"
                             dangerouslySetInnerHTML={{
@@ -70,9 +89,10 @@ function KomnewsSingle() {
                             }}
                         />
 
-                        {/* Kategori */}
+                        {/* Article Categories */}
                         <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-2 mb-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
-                            {article.categories ? (
+                            {article.categories &&
+                            article.categories.length > 0 ? (
                                 article.categories.map((category, index) => (
                                     <Link
                                         key={index}
@@ -89,6 +109,7 @@ function KomnewsSingle() {
                         </div>
                     </>
                 ) : (
+                    /* Article Not Found */
                     <p className="text-center text-lg">Article not found.</p>
                 )}
             </div>
