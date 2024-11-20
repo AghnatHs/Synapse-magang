@@ -8,7 +8,7 @@ const Komnews = () => {
         title: "",
         categories: [],
         komnews: [],
-        headline: {},
+        headlines: {},
     });
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -35,7 +35,7 @@ const Komnews = () => {
                     title: response.data.title,
                     categories: response.data.categories,
                     komnews: response.data.komnews,
-                    headline: response.data.headline,
+                    headlines: response.data.headlines,
                 });
                 setLoading(false);
             })
@@ -53,7 +53,11 @@ const Komnews = () => {
         return <div className="text-center text-lg text-red-500">{error}</div>;
     }
 
-    return (
+    return !data.komnews ? (
+        <div className="mt-[10%] mb-[10%] text-center text-[40px]">
+            No Komnews
+        </div>
+    ) : (
         <div className="flex flex-col align-center justify-center container mx-auto mt-8 px-4">
             <div className="flex align-center items-center justify-center  ">
                 <h1 className="tracking-wider flex flex-row text-[#f0e4d4] text-border font-thin text-[40px] mb-4 font-sports align-center items-center sm:text-[45px] md:text-[50px]">
@@ -63,27 +67,39 @@ const Komnews = () => {
             </div>
 
             <div className="flex flex-col items-center justify-center bg-[#FFAB03] p-4 shadow-bottom-right mb-8 border border-2 border-black ">
-                <h1 className="text-[25px] tracking-wider flex flex-row text-white text-shadow-black font-thin mb-2 font-sports align-center items-center sm:text-[30px] md:text-[35px]">
+                <h1 className="text-[30px] tracking-wider flex flex-row text-white text-shadow-black font-thin mb-2 font-sports align-center items-center sm:text-[30px] md:text-[45px]">
                     TODAY HEADLINE!
                 </h1>
-                <img
-                    src={data.headline.imageUrl}
-                    alt={data.headline.title}
-                    className="w-[180px] mb-2 border border-black border-2 shadow-lg sm:w-[250px] md:w-[300px] lg:w-[350px]"
-                />
-                <h2 className="text-[20px] font-semibold mb-1 font-monts sm:text-[25px] md:text[30px] lg:text-[35px]">
-                    {data.headline.title}
-                </h2>
-                <p className="mb-4 font-monts text-[13px] text-justify sm:text-[16px] md:text-[20px] lg:text-[24px] ">
-                    {data.headline.excerp}
-                </p>
-                <Link
-                    className="w-[10rem] bg-[#F1880A] text-[12px] text-white font-semibold px-3 py-1.5 border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-white hover:text-[#F1880A] sm:text-[16px] md:text-[18px] lg:text-[22px] "
-                    to={`/komnews/${data.headline.slug}`}
-                >
-                    Read More
-                </Link>
-                <hr className="my-1" />
+                {data.headlines && data.headlines.length > 0 ? (
+                    data.headlines.map((headline, index) => (
+                        <div key={headline.slug} className="mb-6 text-center">
+                            <div className="flex justify-center mb-2">
+                                <img
+                                    src={headline.imageUrl}
+                                    alt={headline.title}
+                                    className="w-[180px] shadow-lg sm:w-[250px] md:w-[300px] lg:w-[350px]"
+                                />
+                            </div>
+                            <h2 className="text-[20px] font-semibold mb-1 font-monts sm:text-[25px] md:text-[30px] lg:text-[35px]">
+                                {headline.title}
+                            </h2>
+                            <p className="mb-4 font-monts text-[13px] text-justify sm:text-[16px] md:text-[20px] lg:text-[24px]">
+                                {headline.excerpt}
+                            </p>
+                            <Link
+                                className="w-[10rem] bg-[#F1880A] text-[12px] text-white font-semibold px-3 py-1.5 border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-white hover:text-[#F1880A] sm:text-[16px] md:text-[18px] lg:text-[22px]"
+                                to={`/komnews/${headline.slug}`}
+                            >
+                                Read More
+                            </Link>
+                            <hr className="mt-5" />
+                        </div>
+                    ))
+                ) : (
+                    <div className="mt-[10%] mb-[10%] text-center text-[40px]">
+                        No something new today :(
+                    </div>
+                )}
             </div>
 
             <div className="grid grid-cols-3 gap-x-3 gap-y-2 mb-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
@@ -113,7 +129,7 @@ const Komnews = () => {
             </div>
 
             <div className="flex flex-col lg:my-10">
-                {filteredKomnews.slice(selectedCategory === "All" ? 1 : 0).map((item, index) => (
+                {filteredKomnews.slice(0).map((item, index) => (
                     <div
                         key={index}
                         className="mb-3 bg-[#ffedc8] m-2 p-4 rounded-md md:p-5.5 lg:p-7"
@@ -146,7 +162,9 @@ const Komnews = () => {
                         <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-2 mb-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
                             {item.categories.map((category, catIndex) => (
                                 <Link
-                                    onClick={() => handleCategoryClick(category.slug)}
+                                    onClick={() =>
+                                        handleCategoryClick(category.slug)
+                                    }
                                     key={catIndex}
                                     className="mt-1 border border-black text-[10px] border-2 bg-white font-semibold px-2 py-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#F1880A] hover:text-white sm:text-[12px] md:text-[15px] lg:text-[18px]"
                                 >
