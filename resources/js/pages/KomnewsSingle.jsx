@@ -83,7 +83,7 @@ function KomnewsSingle() {
 
                         {/* Article Content */}
                         <div
-                            className="text-lg leading-relaxed mb-8 px-4"
+                            className="indent-10 text-lg leading-relaxed mb-8 px-4 space-y-2 text-justify"
                             dangerouslySetInnerHTML={{
                                 __html: article.content,
                             }}
